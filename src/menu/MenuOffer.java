@@ -3,8 +3,12 @@ package menu;
 import inventory.Offer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 
-public class MenuOffer extends MenuElement implements Selectable{
+public class MenuOffer extends MenuElement implements Selectable, Scrollable{
 
 	Offer offer;
 	int vBuffer;
@@ -17,6 +21,7 @@ public class MenuOffer extends MenuElement implements Selectable{
 		vBuffer = main.getVerticalBuffer();
 		this.offer = offer;
 		main.addToSelection(this);
+		main.setScrolling(this);
 		main.add(this);
 	}
 	
@@ -91,8 +96,15 @@ public class MenuOffer extends MenuElement implements Selectable{
 		// Set to drawing color
 		gc.setFill(Color.RED);
 		
+		// Set the font to an appropriate size to write quantities
+		gc.setFont(Font.font("veranda", FontWeight.BOLD, FontPosture.REGULAR, 16));
+		
+		// Set alignment center to draw centered quantities
+		gc.setTextAlign(TextAlignment.CENTER);
+		
 		// Draw the input item
-		offer.getInput().drawItemIcon(gc, x+height/2, y + vBuffer, height, height);
+		offer.getInput().drawItemIcon(gc, x+height/2, y + vBuffer, height, height); // Drawing the item
+		gc.fillText(Integer.toString(offer.getInputQuantity()), x+height/2, y + vBuffer + 27); // Drawing the input quantity
 		
 		// Generate and draw an arrow indicating conversion direction
 		int aw = 46;  int ah = 34; // Variables to make changing arrow position easy
@@ -100,7 +112,9 @@ public class MenuOffer extends MenuElement implements Selectable{
 		gc.fillPolygon(arr[0], arr[1], 8); // Draws the arrow
 		
 		// Draw the output item
-		offer.getOutput().drawItemIcon(gc, x+width-height/2, y + vBuffer, height, height);
+		offer.getOutput().drawItemIcon(gc, x+width-height/2, y + vBuffer, height, height); // Drawing the item
+		gc.fillText(Integer.toString(offer.getOutputQuantity()), x+width-height/2, y + vBuffer + 27); // Drawing the output quantity
+		
 		
 		// Return the gc to default value
 		gc.restore();		
@@ -109,6 +123,19 @@ public class MenuOffer extends MenuElement implements Selectable{
 	@Override
 	public void setToolTip() {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void left() {
+		System.out.println("Used left");
+		offer.incrementQuantity(false);
+		
+	}
+
+	@Override
+	public void right() {
+		offer.incrementQuantity(true);
 		
 	}
 	
