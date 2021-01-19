@@ -11,7 +11,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import ships.Ship;
 
-public class MenuDisplay extends MenuElement implements Selectable{
+public class MenuDisplay extends MenuElement implements Selectable, Scrollable{
 
 	Image displayIcon;
 	String displayName;

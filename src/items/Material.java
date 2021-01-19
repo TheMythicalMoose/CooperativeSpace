@@ -10,6 +10,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
+// TODO: This class needs to be renamed to avoid confusion with JavaFX.paint.Material
 public class Material implements Itemizable{
 
 	MaterialType type;

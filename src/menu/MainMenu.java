@@ -18,7 +18,7 @@ public class MainMenu extends MenuElement{
 	private int selected = 0;
 	private LinkedList<MenuElement> elements = new LinkedList<MenuElement>();
 	private LinkedList<Selectable> selectable = new LinkedList<Selectable>();
-	private MenuDisplay scrolling = null;
+	private Scrollable scrolling = null;
 	
 
 	
@@ -50,7 +50,7 @@ public class MainMenu extends MenuElement{
 		frameLocked = true;	
 	}
 	
-	public void setScrolling(MenuDisplay scrolling) {
+	public void setScrolling(Scrollable scrolling) {
 		this.scrolling = scrolling;
 	}
 	
