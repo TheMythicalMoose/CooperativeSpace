@@ -38,10 +38,17 @@ public class Offer {
 		return outputQuantity;
 	}
 	
+	// Execute the offer based on current input and output quantity
+	public void execute() {
+		
+		// TODO: Fix this execute function to actually do trade based on inventory
+		
+	}
+	
 	// Execute the offer (Do the trade) for a specific double quantity
 	public void execute(double quantity) {
 		
-	
+		// TODO: Fix this execute function to actually do the trade based on quantity
 		
 	}
 	
@@ -55,8 +62,8 @@ public class Offer {
 			outputQuantity = outputQuantity + lcdOutput;
 		} 
 		else {
-			inputQuantity = inputQuantity + lcdInput;
-			 outputQuantity = outputQuantity + lcdOutput;
+			inputQuantity = inputQuantity - lcdInput;
+			 outputQuantity = outputQuantity - lcdOutput;
 		}
 	}
 	

@@ -82,7 +82,7 @@ public class MenuOffer extends MenuElement implements Selectable, Scrollable{
 
 	@Override
 	public void select() {
-		// TODO Auto-generated method stub
+		offer.execute();
 		
 	}
 
@@ -128,7 +128,6 @@ public class MenuOffer extends MenuElement implements Selectable, Scrollable{
 
 	@Override
 	public void left() {
-		System.out.println("Used left");
 		offer.incrementQuantity(false);
 		
 	}

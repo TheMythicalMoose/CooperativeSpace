@@ -507,10 +507,12 @@ public class Planet extends Sprite implements Focusable, TakesDamage{
 		
 		
 		// "Trade" options to confirm the decision to trade items
-		MenuLabel tradeLabel = new MenuLabel(sellMenu, Align.LEFT, "Trade", true, 24, 10, 40) {
+		MenuLabel tradeLabel = new MenuLabel(sellMenu, Align.LEFT, "Trade All", true, 24, 10, 40) {
 			@Override //overriding the select function of the label
 			public void select() {
-				
+				for (Offer offer : allOffers) {
+					offer.execute();
+				}
 			}
 		};
 		
