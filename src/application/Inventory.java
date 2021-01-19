@@ -15,7 +15,7 @@ import ships.Ship;
 import menu.MenuBar;
 
 public class Inventory{
-	
+	// THE MYTHICAL MOOSE WAS HERE
 	// This keeps tracks of all the players items
 	private static LinkedList<Item> allItems = new LinkedList<Item>();
 	private static LinkedList<Ship> allShips = new LinkedList<Ship>();
