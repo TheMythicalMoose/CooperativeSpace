@@ -112,6 +112,10 @@ public class MainMenu extends MenuElement{
 			}
 			selected--;
 		}
+		
+		if (selectable.get(selected) instanceof Scrollable) { // If the new selection is a scrollable item
+			scrolling = (Scrollable) selectable.get(selected);
+		}
 	}
 	
 	public boolean frameLocked() {

@@ -9,6 +9,7 @@ public class driver extends Application{ // Driver extends the application
 	public static void main(String[] args) { // Main entry point
 		launch(); //Launch application
 		
+		
 	}
 	
 	@Override
